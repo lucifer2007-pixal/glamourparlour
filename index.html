@@ -1,0 +1,2052 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#174D3A">
+<meta name="description" content="Glamour Beauty Parlour — ladies-only beauty services and packages in Kalepadal, Hadapsar, Pune.">
+<title>Glamour Beauty Parlour | Hadapsar, Pune</title>
+
+<style>
+:root {
+  --green: #236B50;
+  --green-dark: #123D2E;
+  --sage: #E5F0E8;
+  --cream: #FBFAF4;
+  --gold: #C49A42;
+  --ink: #1D3027;
+  --muted: #617469;
+  --line: #D4E2D8;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+#app { min-height: 100vh; overflow: hidden; }
+
+.topbar {
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+}
+
+.nav {
+  max-width: 1160px;
+  margin: auto;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 220px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: white;
+  border: 2px solid rgba(196,154,66,.9);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.2), 0 8px 18px rgba(18,61,46,.12);
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.brand strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.brand small {
+  display: block;
+  margin-top: 3px;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 9px;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.navlinks a:hover { color: var(--green); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--green);
+  border-radius: 999px;
+  padding: 12px 19px;
+  background: var(--green);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(18,61,46,.12);
+  transition: transform .28s ease, box-shadow .28s ease,
+              background .28s ease, color .28s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: var(--green-dark);
+  box-shadow: 0 12px 26px rgba(18,61,46,.2);
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--green-dark);
+  border-color: var(--green);
+}
+
+.btn.outline:hover {
+  background: var(--green);
+  color: white;
+}
+
+.btn.small { padding: 10px 15px; }
+
+.hero {
+  background: linear-gradient(115deg, #E5F0E8 0%, #FBFAF4 53%, #C7DDCF 100%);
+}
+
+.hero-inner {
+  max-width: 1160px;
+  margin: auto;
+  padding: 78px 24px 72px;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--green-dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow:before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -1.8px;
+  margin: 21px 0 20px;
+  max-width: 620px;
+}
+
+h1 em {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.hero-copy {
+  max-width: 465px;
+  color: #50675A;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+  color: #50675A;
+  font-size: 11px;
+}
+
+.hero-meta span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.hero-art {
+  min-height: 420px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.art-frame {
+  width: min(100%, 420px);
+  height: 420px;
+  border-radius: 210px 210px 24px 24px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(18,61,46,.02), rgba(18,61,46,.12)),
+    url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85")
+    center 32% / cover;
+  border: 8px solid rgba(255,255,255,.72);
+  box-shadow: 0 24px 60px rgba(18,61,46,.18);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.art-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 70px rgba(18,61,46,.25);
+}
+
+.art-flower {
+  position: absolute;
+  right: 17px;
+  bottom: 24px;
+  color: #fff3e7;
+  font-size: 55px;
+  opacity: .85;
+}
+
+.floating-note {
+  position: absolute;
+  z-index: 4;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 17px;
+  box-shadow: 0 12px 35px rgba(18,61,46,.13);
+  font-size: 11px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-note strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.floating-note span { color: var(--muted); }
+
+.note-one { top: 70px; left: -4px; }
+.note-two { bottom: 30px; right: -3px; animation-delay: -2s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.trust-strip {
+  background: #F0F6F1;
+  border-bottom: 1px solid var(--line);
+}
+
+.trust-inner {
+  max-width: 1160px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 22px 24px;
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #345A46;
+  font-size: 12px;
+}
+
+.trust-icon { color: var(--gold); font-size: 20px; }
+
+section { scroll-margin-top: 85px; }
+
+.section {
+  max-width: 1160px;
+  margin: auto;
+  padding: 82px 24px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.section-head h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(31px, 4vw, 46px);
+  font-weight: 500;
+  letter-spacing: -.8px;
+  margin: 11px 0 0;
+}
+
+.section-head p {
+  max-width: 410px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.section-label {
+  color: var(--green-dark);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 13px;
+}
+
+.service-card {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 17px;
+  padding: 22px 17px;
+  min-height: 155px;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--green);
+  box-shadow: 0 16px 34px rgba(18,61,46,.12);
+}
+
+.service-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  color: var(--green-dark);
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.packages-section, .reviews {
+  background: #EFF5F0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.packages-inner {
+  max-width: 1160px;
+  margin: auto;
+  padding: 82px 24px;
+}
+
+.package-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  border: 1px solid #B7D0BF;
+  background: transparent;
+  color: var(--green-dark);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.package-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 285px;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(18,61,46,.10);
+}
+
+.package-card[hidden] { display: none; }
+
+.package-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.package-number {
+  color: var(--green-dark);
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.price {
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+.package-card h3 {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.package-card ul {
+  margin: 0 0 20px;
+  padding-left: 17px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+  flex: 1;
+}
+
+.package-card .btn {
+  align-self: flex-start;
+  padding: 10px 15px;
+  font-size: 11px;
+}
+
+.price-note {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 18px 0 0;
+  line-height: 1.6;
+}
+
+.hair-makeup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.feature-panel {
+  border-radius: 22px;
+  padding: 30px;
+  background: linear-gradient(135deg, var(--sage), var(--cream));
+  border: 1px solid var(--line);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.feature-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(18,61,46,.10);
+}
+
+.feature-panel .service-icon { width: 48px; height: 48px; }
+
+.feature-panel h3 {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: 26px;
+  margin: 18px 0 10px;
+}
+
+.feature-panel p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 430px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 23px;
+}
+
+.feature-list span {
+  border: 1px solid #B7D0BF;
+  border-radius: 99px;
+  padding: 8px 11px;
+  font-size: 11px;
+  color: var(--green-dark);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  grid-template-rows: 170px 170px;
+  gap: 13px;
+}
+
+.gallery-tile {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: end;
+  padding: 18px;
+  color: white;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.gallery-tile:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(18,61,46,.18);
+}
+
+.gallery-tile:nth-child(1) {
+  grid-row: span 2;
+  background-image: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85");
+}
+
+.gallery-tile:nth-child(2) {
+  background-image: url("images/hair-styling.jpe");
+}
+
+.gallery-tile:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=85");
+}
+
+.gallery-tile:nth-child(4) {
+  background-image: url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=85");
+}
+
+.gallery-tile:nth-child(5) {
+  background-image: url("images/special-occasions.jpe");
+  background-position: center 20%;
+}
+
+.gallery-tile:after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, rgba(18,61,46,.72));
+}
+
+.gallery-tile span {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+.gallery-note {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 13px;
+}
+
+.reviews {
+  background: linear-gradient(180deg, #edf4ef 0%, #f8faf7 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.reviews-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 22px;
+  padding: 18px 21px;
+  background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(229,240,232,.9));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(18,61,46,.06);
+}
+
+.review-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.review-average {
+  min-width: 56px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: rgba(18,61,46,.06);
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: 34px;
+  line-height: 1;
+  text-align: center;
+}
+
+.review-average.brand-badge {
+  min-width: 54px;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  border: 2px solid rgba(196,154,66,.9);
+  color: white;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 10px 18px rgba(18,61,46,.12);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.review-summary-details {
+  display: grid;
+  gap: 4px;
+}
+
+.review-summary-details .stars {
+  margin: 0;
+  letter-spacing: 4px;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1;
+}
+
+.review-count {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .02em;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: rgba(255,255,255,.9);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 20px 18px;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(35,107,80,.45);
+  box-shadow: 0 16px 34px rgba(18,61,46,.08);
+}
+
+.review-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.review-card .stars {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.review-date {
+  color: var(--muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.review-card blockquote {
+  margin: 0 0 18px;
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  flex: 1;
+}
+
+.review-card small {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.review-card small:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  opacity: .8;
+}
+
+.reviews-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.review-empty, .review-load-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 30px 22px;
+  border: 1px dashed rgba(35,107,80,.3);
+  background: rgba(255,255,255,.5);
+  border-radius: 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.review-load-error { color: #9b2c2c; }
+
+.review-form {
+  max-width: 680px;
+  margin: 22px auto 0;
+  padding: 26px 24px 22px;
+  background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(229,240,232,.9));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(18,61,46,.07);
+}
+
+.review-form[hidden] { display: none; }
+
+.review-form h3 {
+  margin: 0 0 6px;
+  color: var(--green-dark);
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.review-form > p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.review-form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.review-form .field textarea { min-height: 110px; }
+
+.review-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+  align-items: center;
+  min-height: 46px;
+}
+
+.review-rating input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.review-rating label {
+  color: #C8D3CB;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1.2;
+  transition: color .15s ease, transform .15s ease;
+}
+
+.review-rating label:hover { transform: scale(1.12); }
+.review-rating label:hover,
+.review-rating label:hover ~ label,
+.review-rating input:checked ~ label { color: var(--gold); }
+.review-rating input:focus-visible + label { outline: 2px solid var(--green); outline-offset: 3px; }
+
+.review-status {
+  min-height: 18px;
+  margin: 12px 0 0;
+  color: var(--green-dark);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.review-status.error { color: #9b2c2c; }
+.review-form button:disabled { cursor: wait; opacity: .6; }
+
+.stars {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.contact-card {
+  background: linear-gradient(145deg, var(--sage), var(--cream));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 29px;
+}
+
+.contact-card h3 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 500;
+  margin-bottom: 9px;
+}
+
+.contact-card > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.contact-line {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  margin-top: 22px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.contact-line .service-icon {
+  flex: 0 0 38px;
+  margin: 0;
+}
+
+.contact-line strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+}
+
+.contact-line span { color: var(--muted); }
+
+.map-link {
+  display: inline-flex;
+  margin-top: 17px;
+  font-size: 11px;
+  color: var(--green-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.field-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  border: 1px solid #B7D0BF;
+  background: white;
+  color: var(--ink);
+  border-radius: 11px;
+  padding: 12px 13px;
+  outline: none;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(35,107,80,.15);
+}
+
+.field textarea { min-height: 100px; resize: vertical; }
+
+.form-message {
+  grid-column: 1 / -1;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--sage);
+  color: var(--green-dark);
+  font-size: 12px;
+  line-height: 1.6;
+  display: none;
+}
+
+.form-message.show { display: block; }
+
+.availability-message {
+  grid-column: 1 / -1;
+  min-height: 18px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.booking-form button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+  transform: none;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-help {
+  font-size: 10px;
+  color: var(--muted);
+  grid-column: 1 / -1;
+  line-height: 1.6;
+}
+
+.footer {
+  background: var(--green-dark);
+  color: white;
+  padding: 32px 24px;
+}
+
+.footer-inner {
+  max-width: 1160px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 11px;
+  color: #DDEBE1;
+  line-height: 1.7;
+}
+
+.footer .brand small { color: #B7D8C2; }
+.footer-links { display: flex; gap: 15px; font-size: 11px; color: #DDEBE1; }
+.footer-links a:hover { color: var(--gold); }
+
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.motion-ready .scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0) scale(.985);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1);
+  }
+
+  body.motion-ready .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .services-grid .scroll-reveal:nth-child(2),
+  .packages-grid .scroll-reveal:nth-child(2),
+  .gallery-grid .scroll-reveal:nth-child(2),
+  .reviews-grid .scroll-reveal:nth-child(2) {
+    transition-delay: .08s;
+  }
+
+  .services-grid .scroll-reveal:nth-child(3),
+  .packages-grid .scroll-reveal:nth-child(3),
+  .gallery-grid .scroll-reveal:nth-child(3),
+  .reviews-grid .scroll-reveal:nth-child(3) {
+    transition-delay: .16s;
+  }
+
+  .services-grid .scroll-reveal:nth-child(4),
+  .gallery-grid .scroll-reveal:nth-child(4) {
+    transition-delay: .24s;
+  }
+
+  .gallery-grid .scroll-reveal:nth-child(5) {
+    transition-delay: .32s;
+  }
+}
+
+@media (max-width: 900px) {
+  .navlinks { display: none; }
+  .hero-inner { grid-template-columns: 1fr .85fr; gap: 20px; padding-top: 58px; }
+  .art-frame { height: 350px; }
+  .hero-art { min-height: 360px; }
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .packages-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .nav { padding: 12px 16px; }
+  .brand { min-width: 0; }
+  .brand strong { font-size: 15px; }
+  .brand-mark { width: 37px; height: 37px; }
+  .nav > .btn { padding: 10px 13px; font-size: 10px; }
+  .hero-inner { grid-template-columns: 1fr; padding: 54px 20px 44px; }
+  .hero-art { min-height: 330px; margin: 0 12px; }
+  .art-frame { height: 330px; max-width: 340px; }
+  .note-one { left: -9px; top: 35px; }
+  .note-two { right: -10px; bottom: 15px; }
+  .trust-inner { padding: 18px 15px; grid-template-columns: 1fr; gap: 13px; }
+  .trust-item { justify-content: flex-start; }
+  .section, .packages-inner { padding: 60px 18px; }
+  .section-head { display: block; }
+  .section-head p { margin-top: 15px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .service-card { padding: 17px 14px; min-height: 145px; }
+  .packages-grid { grid-template-columns: 1fr; }
+  .package-card { min-height: 0; }
+  .hair-makeup { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 190px 145px 145px; }
+  .gallery-tile:nth-child(1) { grid-row: span 2; }
+  .gallery-tile:nth-child(5) { display: none; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-toolbar { align-items: flex-start; padding: 15px; }
+  .review-form-fields { grid-template-columns: 1fr; }
+  .review-form { padding: 19px; }
+  .booking-layout { grid-template-columns: 1fr; }
+  .booking-form { grid-template-columns: 1fr; }
+  .field.full, .form-message, .form-actions, .form-help { grid-column: 1; }
+  .footer-inner { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<header class="topbar">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Glamour Beauty Parlour home">
+      <span class="brand-mark">G</span>
+      <span>
+        <strong>Glamour Beauty Parlour</strong>
+        <small>Only Ladies Parlour</small>
+      </span>
+    </a>
+
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a class="btn small" href="#booking">Book an Appointment ↗</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">A little time, just for you</div>
+      <h1>Enhance your<br><em>beauty.</em></h1>
+      <p class="hero-copy">
+        A welcoming ladies-only beauty parlour for your everyday glow
+        and special occasions. Discover thoughtful beauty packages,
+        hair care and makeup services in Hadapsar, Pune.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="#booking">Book Your Visit ↗</a>
+        <a class="btn outline" href="#packages">Explore Packages</a>
+      </div>
+
+      <div class="hero-meta">
+        <span>✧ Ladies-only salon</span>
+        <span>◷ 11:00 AM – 9:00 PM</span>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-label="Beauty portrait">
+      <div class="art-frame">
+        <div class="art-flower">✿</div>
+      </div>
+      <div class="floating-note note-one">
+        <strong>Feel lovely</strong>
+        <span>Care made for you</span>
+      </div>
+      <div class="floating-note note-two">
+        <strong>Beauty packages</strong>
+        <span>Starting at ₹300</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">✿</span><span>Beauty services for women</span></div>
+    <div class="trust-item"><span class="trust-icon">♡</span><span>Packages for every occasion</span></div>
+    <div class="trust-item"><span class="trust-icon">⌖</span><span>Conveniently located in Hadapsar</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-label">What we do</div>
+        <h2>Your beauty, head to toe</h2>
+      </div>
+      <p>From everyday grooming to a little extra pampering, explore our salon services and ask us about the right package for you.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">✧</div><h3>Facials & Cleanup</h3><p>Mini facials, facial care, cleanup and bleach services.</p></div>
+      <div class="service-card"><div class="service-icon">❀</div><h3>Waxing</h3><p>Hand, leg, full leg and underarm waxing options.</p></div>
+      <div class="service-card"><div class="service-icon">♡</div><h3>Threading</h3><p>Eyebrow, forehead and upper-lip grooming.</p></div>
+      <div class="service-card"><div class="service-icon">☼</div><h3>Manicure & Pedicure</h3><p>Care and grooming for hands and feet.</p></div>
+      <div class="service-card"><div class="service-icon">❋</div><h3>Body & Head Care</h3><p>Head massage, body massage and steam services.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hair">
+  <div class="section" style="padding-top:12px">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Style & celebrate</div>
+        <h2>Hair care & makeup</h2>
+      </div>
+      <p>Get ready for your everyday look, a party, or a special celebration. Ask us about availability and custom styling.</p>
+    </div>
+
+    <div class="hair-makeup">
+      <article class="feature-panel">
+        <div class="service-icon">♧</div>
+        <h3>Hair Care & Styling</h3>
+        <p>Refresh your look with haircuts, hair spa, hairstyling and hair colouring. Service availability and pricing can be confirmed when you book.</p>
+        <div class="feature-list"><span>Haircut</span><span>Hair Spa</span><span>Hairstyle</span><span>Hair Colouring</span></div>
+        <a class="btn outline" href="#booking" data-service="Hair Care & Styling">Ask about hair services ↗</a>
+      </article>
+
+      <article class="feature-panel">
+        <div class="service-icon">✿</div>
+        <h3>Makeup for Moments</h3>
+        <p>Makeup and styling for celebrations, parties and bridal occasions. Saree draping and hairstyle are also listed in our ₹1,100 package.</p>
+        <div class="feature-list"><span>Bridal Makeup</span><span>Party Makeup</span><span>Engagement</span><span>Saree Draping</span></div>
+        <a class="btn outline" href="#booking" data-service="Makeup & Styling">Ask about makeup ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="packages-section" id="packages">
+  <div class="packages-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Special combinations</div>
+        <h2>Beauty packages & prices</h2>
+      </div>
+      <p>Choose a package that suits your beauty routine. Tap “Book this package” to start an appointment request.</p>
+    </div>
+
+    <div class="package-controls" aria-label="Filter packages">
+      <button class="filter-btn active" data-filter="all">All packages</button>
+      <button class="filter-btn" data-filter="grooming">Grooming & waxing</button>
+      <button class="filter-btn" data-filter="facial">Facial & pampering</button>
+      <button class="filter-btn" data-filter="special">Full care & styling</button>
+    </div>
+
+    <div class="packages-grid" id="packageGrid">
+
+      <article class="package-card" data-category="grooming">
+        <div class="package-top"><span class="package-number">Package 01</span><span class="price">₹300</span></div>
+        <h3>Mini Facial Combo</h3>
+        <ul><li>Eyebrow</li><li>Forehead</li><li>Upper lips</li><li>Mini facial</li></ul>
+        <button class="btn" data-book="Mini Facial Combo — ₹300">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="grooming">
+        <div class="package-top"><span class="package-number">Package 02</span><span class="price">₹350</span></div>
+        <h3>Everyday Wax Combo</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Hand wax</li><li>Underarms</li><li>half Leg wax</li></ul>
+        <button class="btn" data-book="Everyday Wax Combo — ₹350">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="grooming">
+        <div class="package-top"><span class="package-number">Package 03</span><span class="price">₹450</span></div>
+        <h3>Full Leg Wax Combo</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Hand wax</li><li>Underarms</li><li>Full leg wax</li></ul>
+        <button class="btn" data-book="Full Leg Wax Combo — ₹450">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="facial">
+        <div class="package-top"><span class="package-number">Package 04</span><span class="price">₹500</span></div>
+        <h3>Glow & Groom Combo</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Full hand wax & underarms</li><li>Half leg wax</li><li>Mini facial</li></ul>
+        <button class="btn" data-book="Glow & Groom Combo — ₹500">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="facial">
+        <div class="package-top"><span class="package-number">Package 05</span><span class="price">₹600</span></div>
+        <h3>Bleach & Glow Combo</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Full hand wax & underarms</li><li>Bleach and half leg wax</li><li>Mini facial</li></ul>
+        <button class="btn" data-book="Bleach & Glow Combo — ₹600">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="facial">
+        <div class="package-top"><span class="package-number">Package 06</span><span class="price">₹800</span></div>
+        <h3>Massage & Steam</h3>
+        <ul><li>Head massage</li><li>Body massage</li><li>Steam bath</li><li>Head steam</li></ul>
+        <button class="btn" data-book="Massage & Steam — ₹800">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="facial">
+        <div class="package-top"><span class="package-number">Package 07</span><span class="price">₹850</span></div>
+        <h3>Facial Care Combo</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Full hand wax & underarms</li><li>Half leg wax and bleach</li><li>Facial</li></ul>
+        <button class="btn" data-book="Facial Care Combo — ₹850">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="facial">
+        <div class="package-top"><span class="package-number">Package 08</span><span class="price">₹1,100</span></div>
+        <h3>Mani-Pedi & Facial</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Full hand wax & underarms</li><li>Half leg wax</li><li>Manicure, pedicure & facial</li></ul>
+        <button class="btn" data-book="Mani-Pedi & Facial — ₹1,100">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="facial">
+        <div class="package-top"><span class="package-number">Package 09</span><span class="price">₹1,300</span></div>
+        <h3>Complete Care Combo</h3>
+        <ul><li>Eyebrow and hand wax</li><li>Underarms & half leg wax</li><li>Manicure and pedicure</li><li>Bleach and facial</li></ul>
+        <button class="btn" data-book="Complete Care Combo — ₹1,300">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="special">
+        <div class="package-top"><span class="package-number">Package 10</span><span class="price">₹2,100</span></div>
+        <h3>Full Body Polishing Combo</h3>
+        <ul><li>Eyebrow, forehead & upper lips</li><li>Full hand wax</li><li>Full body polishing</li><li>Manicure, pedicure, facial cleaning & head massage</li></ul>
+        <button class="btn" data-book="Full Body Polishing Combo — ₹2,100">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="special">
+        <div class="package-top"><span class="package-number">Package 11</span><span class="price">₹1,100</span></div>
+        <h3>Makeup & Styling</h3>
+        <ul><li>Makeup</li><li>Hairstyle</li><li>Saree draping</li></ul>
+        <button class="btn" data-book="Makeup & Styling — ₹1,100">Book this package ↗</button>
+      </article>
+
+      <article class="package-card" data-category="special">
+        <div class="package-top"><span class="package-number">Package 12</span><span class="price">₹2,600</span></div>
+        <h3>Ultimate Beauty Combo</h3>
+        <ul><li>Eyebrow, upper lips & full hand wax</li><li>Underarms and full leg wax</li><li>Full body polishing</li><li>Manicure, pedicure, facial cleaning & hair spa</li></ul>
+        <button class="btn" data-book="Ultimate Beauty Combo — ₹2,600">Book this package ↗</button>
+      </article>
+
+    </div>
+
+    <p class="price-note">
+      Package names are for easy browsing; confirm exact services and prices
+      with the parlour before booking. Package 2's original wording for leg
+      waxing should be confirmed.
+    </p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section">
+    <div class="section-head">
+      <div><div class="section-label">A glimpse of glamour</div><h2>Beauty inspiration</h2></div>
+      <p>A preview gallery layout for makeup, hair and salon care. Replace these stock photos with real photos of your parlour and work.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-tile"><span>Makeup moments</span></div>
+      <div class="gallery-tile"><span>Hair styling</span></div>
+      <div class="gallery-tile"><span>Skin care</span></div>
+      <div class="gallery-tile"><span>Everyday glow</span></div>
+      <div class="gallery-tile"><span>Special occasions</span></div>
+    </div>
+    <p class="gallery-note">These are stock photos, not actual client photographs. Add authentic salon photos before publishing.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="section">
+    <div class="section-head">
+      <div><div class="section-label">Kind words matter</div><h2>Customer love</h2></div>
+      <p>Real experiences shared by our customers. Reviews are published as soon as they are submitted.</p>
+    </div>
+
+    <div class="reviews-toolbar">
+      <div class="review-summary" aria-live="polite">
+        <strong class="review-average" id="reviewAverage">—</strong>
+        <div class="review-summary-details">
+          <span class="stars" id="reviewAverageStars" aria-hidden="true">★★★★★</span>
+          <span class="review-count" id="reviewCount">Loading reviews…</span>
+        </div>
+      </div>
+      <button class="btn small" id="toggleReviewForm" type="button" aria-expanded="false" aria-controls="reviewForm">Write a review</button>
+    </div>
+
+    <div class="reviews-grid" id="reviewsList" aria-live="polite" aria-busy="true">
+      <p class="review-empty">Loading customer reviews…</p>
+    </div>
+    <div class="reviews-more" id="reviewsMore" hidden>
+      <button class="btn outline small" id="showMoreReviews" type="button">Show more reviews</button>
+    </div>
+
+    <form class="review-form" id="reviewForm" hidden>
+      <h3>Write a review</h3>
+      <p>Your review will appear right away. Please do not include private information.</p>
+      <div class="review-form-fields">
+        <div class="field">
+          <label for="reviewName">Your name *</label>
+          <input id="reviewName" name="reviewName" autocomplete="name" minlength="2" maxlength="60" placeholder="Enter your name" required>
+        </div>
+        <div class="field">
+          <span class="field-label" id="reviewRatingLabel">Your rating *</span>
+          <div class="review-rating" role="radiogroup" aria-labelledby="reviewRatingLabel">
+            <input id="reviewRating5" name="reviewRating" type="radio" value="5" required><label for="reviewRating5" title="5 stars">★</label>
+            <input id="reviewRating4" name="reviewRating" type="radio" value="4"><label for="reviewRating4" title="4 stars">★</label>
+            <input id="reviewRating3" name="reviewRating" type="radio" value="3"><label for="reviewRating3" title="3 stars">★</label>
+            <input id="reviewRating2" name="reviewRating" type="radio" value="2"><label for="reviewRating2" title="2 stars">★</label>
+            <input id="reviewRating1" name="reviewRating" type="radio" value="1"><label for="reviewRating1" title="1 star">★</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="reviewText">Your review *</label>
+          <textarea id="reviewText" name="reviewText" minlength="10" maxlength="500" placeholder="Tell others about your experience (10–500 characters)" required></textarea>
+        </div>
+        <div class="field full">
+          <button class="btn" id="reviewSubmit" type="submit">Publish review</button>
+        </div>
+      </div>
+      <p class="review-status" id="reviewStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section">
+    <div class="section-head">
+      <div><div class="section-label">Come say hello</div><h2>Book your beauty break</h2></div>
+      <p>Send an appointment request with your preferred service and time. The parlour can confirm availability directly.</p>
+    </div>
+
+    <div class="booking-layout">
+      <aside class="contact-card">
+        <h3>Glamour Beauty Parlour</h3>
+        <p>Only Ladies Parlour · Beauty care with a personal touch.</p>
+
+        <div class="contact-line">
+          <div class="service-icon">⌖</div>
+          <div><strong>Visit us</strong><span>Sr. No. 40, Raskar Villa Building,<br>Near Ganpati Temple, Kalepadal,<br>Hadapsar, Pune – 411028</span></div>
+        </div>
+
+        <div class="contact-line">
+          <div class="service-icon">◷</div>
+          <div><strong>Opening hours</strong><span>Every day, 11:00 AM – 9:00 PM<br><small>Please confirm holiday timings.</small></span></div>
+        </div>
+
+        <div class="contact-line">
+          <div class="service-icon">♡</div>
+          <div>
+            <strong>Appointments</strong>
+            <span><a href="https://wa.me/919604335395" target="_blank" rel="noopener">WhatsApp 9604335395 ↗</a></span>
+          </div>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=18.4881944%2C73.9391389" target="_blank" rel="noopener">Find us on Google Maps ↗</a>
+      </aside>
+
+      <div id="booking">
+      <form class="booking-form" id="bookingForm">
+        <div class="field"><label for="customerName">Your name *</label><input id="customerName" name="customerName" autocomplete="name" placeholder="Enter your name" required></div>
+        <div class="field"><label for="customerPhone">Your phone number *</label><input id="customerPhone" name="customerPhone" type="tel" autocomplete="tel" placeholder="Enter your number" pattern="(?:\+91(?: |-)?[0-9]{10}|[0-9]{10})" maxlength="16" title="Enter 10 digits, with or without the +91 country code." required></div>
+
+        <div class="field">
+          <label for="serviceSelect">Service or package *</label>
+          <select id="serviceSelect" name="serviceSelect" required>
+            <option value="">Choose a service</option>
+            <option>Mini Facial Combo — ₹300</option>
+            <option>Everyday Wax Combo — ₹350</option>
+            <option>Full Leg Wax Combo — ₹450</option>
+            <option>Glow & Groom Combo — ₹500</option>
+            <option>Bleach & Glow Combo — ₹600</option>
+            <option>Massage & Steam — ₹800</option>
+            <option>Facial Care Combo — ₹850</option>
+            <option>Mani-Pedi & Facial — ₹1,100</option>
+            <option>Complete Care Combo — ₹1,300</option>
+            <option>Full Body Polishing Combo — ₹2,100</option>
+            <option>Makeup & Styling — ₹1,100</option>
+            <option>Ultimate Beauty Combo — ₹2,600</option>
+            <option>Hair Care & Styling</option>
+            <option>Bridal / Party / Engagement Makeup</option>
+            <option>Other service</option>
+          </select>
+        </div>
+
+        <div class="field"><label for="appointmentDate">Preferred date *</label><input id="appointmentDate" name="appointmentDate" type="date" required></div>
+
+        <div class="field">
+          <label for="appointmentTime">Preferred time *</label>
+          <select id="appointmentTime" name="appointmentTime" required>
+            <option value="">Choose a time</option>
+            <option value="11:00 AM – 1:00 PM">11:00 AM – 1:00 PM</option>
+            <option value="1:00 PM – 3:00 PM">1:00 PM – 3:00 PM</option>
+            <option value="3:00 PM – 5:00 PM">3:00 PM – 5:00 PM</option>
+            <option value="5:00 PM – 7:00 PM">5:00 PM – 7:00 PM</option>
+            <option value="7:00 PM – 9:00 PM">7:00 PM – 9:00 PM</option>
+          </select>
+        </div>
+
+        <div class="field"><label for="extra">Anything else? (optional)</label><input id="extra" name="extra" placeholder="Notes or preferred stylist"></div>
+        <div class="field full"><label for="notes">Additional details (optional)</label><textarea id="notes" name="notes" placeholder="Tell us any details that may help with your appointment."></textarea></div>
+
+        <div class="availability-message" id="availabilityMessage" role="status" aria-live="polite">Checking online appointment availability…</div>
+        <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+
+        <div class="form-actions">
+          <button class="btn" type="submit" id="bookingSubmit">Send appointment request on WhatsApp ↗</button>
+        </div>
+
+        <div class="form-help">
+          Your selected time is reserved when online booking is connected, then WhatsApp opens
+          with your appointment details ready to send to the parlour.
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="#home">
+      <span class="brand-mark">G</span>
+      <span><strong>Glamour Beauty Parlour</strong><small>Only Ladies Parlour</small></span>
+    </a>
+    <p>Sr. No. 40, Raskar Villa Building, Kalepadal, Hadapsar, Pune 28<br>Open 11:00 AM – 9:00 PM</p>
+    <div class="footer-links"><a href="#services">Services</a><a href="#packages">Packages</a><a href="#contact">Appointments</a></div>
+    <p>© <span id="year"></span> Glamour Beauty Parlour</p>
+  </div>
+</footer>
+
+</div>
+
+<script src="supabase-client.js"></script>
+<script>
+// Owner's WhatsApp number with India country code and digits only.
+const salonWhatsApp = "919604335395";
+
+const reviewForm = document.getElementById("reviewForm");
+const reviewSubmit = document.getElementById("reviewSubmit");
+const reviewStatus = document.getElementById("reviewStatus");
+const reviewsList = document.getElementById("reviewsList");
+const reviewAverage = document.getElementById("reviewAverage");
+const reviewAverageStars = document.getElementById("reviewAverageStars");
+const reviewCount = document.getElementById("reviewCount");
+const toggleReviewForm = document.getElementById("toggleReviewForm");
+const reviewsMore = document.getElementById("reviewsMore");
+const showMoreReviews = document.getElementById("showMoreReviews");
+const reviewsPerPage = 6;
+let allReviews = [];
+let visibleReviewCount = reviewsPerPage;
+let reviewLoadRequest = 0;
+
+function explainReviewError(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  if (message.includes("schema cache") || /could not find the function/i.test(message)) {
+    return "The review database needs setup. Run the latest supabase/schema.sql in Supabase SQL Editor, then try again.";
+  }
+  return message;
+}
+
+function renderReviews(reviews) {
+  reviewsList.replaceChildren();
+  if (!reviews.length) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.className = "review-empty";
+    emptyMessage.textContent = "No reviews yet. Be the first to share your experience.";
+    reviewsList.append(emptyMessage);
+    reviewAverage.textContent = "G";
+    reviewAverage.classList.add("brand-badge");
+    reviewAverageStars.textContent = "★★★★★";
+    reviewCount.textContent = "Be the first to leave a review";
+    reviewsMore.hidden = true;
+    return;
+  }
+
+  reviewAverage.classList.remove("brand-badge");
+  const average = reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length;
+  reviewAverage.textContent = average.toFixed(1);
+  reviewAverageStars.textContent =
+    `${"★".repeat(Math.round(average))}${"☆".repeat(5 - Math.round(average))}`;
+  reviewCount.textContent = `${reviews.length} ${reviews.length === 1 ? "review" : "reviews"}`;
+
+  reviews.slice(0, visibleReviewCount).forEach(review => {
+    const card = document.createElement("article");
+    card.className = "review-card";
+
+    const cardTop = document.createElement("div");
+    cardTop.className = "review-card-top";
+
+    const stars = document.createElement("div");
+    stars.className = "stars";
+    stars.textContent = `${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}`;
+    stars.setAttribute("aria-label", `${review.rating} out of 5 stars`);
+
+    const date = document.createElement("time");
+    date.className = "review-date";
+    const dateValue = new Date(review.created_at);
+    if (!Number.isNaN(dateValue.getTime())) {
+      date.dateTime = dateValue.toISOString();
+      date.textContent = new Intl.DateTimeFormat(undefined, {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      }).format(dateValue);
+    }
+
+    const quote = document.createElement("blockquote");
+    quote.textContent = review.review_text;
+
+    const author = document.createElement("small");
+    author.textContent = review.display_name;
+
+    cardTop.append(stars, date);
+    card.append(cardTop, quote, author);
+    reviewsList.append(card);
+  });
+
+  reviewsMore.hidden = reviews.length <= visibleReviewCount;
+}
+
+async function loadReviews() {
+  const requestId = ++reviewLoadRequest;
+  reviewsList.setAttribute("aria-busy", "true");
+  try {
+    const reviews = await window.glamourReviews.getReviews();
+    if (!Array.isArray(reviews)) {
+      throw new Error("The review service returned an invalid response.");
+    }
+    if (requestId !== reviewLoadRequest) return;
+    if (!reviews.every(review =>
+      Number.isInteger(review.rating) &&
+      review.rating >= 1 &&
+      review.rating <= 5 &&
+      typeof review.display_name === "string" &&
+      typeof review.review_text === "string"
+    )) {
+      throw new Error("The review service returned incomplete review details.");
+    }
+    allReviews = reviews;
+    visibleReviewCount = reviewsPerPage;
+    renderReviews(allReviews);
+  } catch (error) {
+    if (requestId !== reviewLoadRequest) return;
+    reviewsList.replaceChildren();
+    const errorMessage = document.createElement("p");
+    errorMessage.className = "review-load-error";
+    errorMessage.textContent = `Reviews could not load: ${explainReviewError(error)}`;
+    const retryButton = document.createElement("button");
+    retryButton.className = "btn outline small";
+    retryButton.type = "button";
+    retryButton.textContent = "Try again";
+    retryButton.addEventListener("click", loadReviews, { once: true });
+    errorMessage.append(document.createElement("br"), retryButton);
+    reviewsList.append(errorMessage);
+    reviewCount.textContent = "Reviews temporarily unavailable";
+    reviewAverage.textContent = "G";
+    reviewAverage.classList.add("brand-badge");
+    reviewAverageStars.textContent = "★★★★★";
+    reviewsMore.hidden = true;
+  } finally {
+    if (requestId === reviewLoadRequest) {
+      reviewsList.setAttribute("aria-busy", "false");
+    }
+  }
+}
+
+toggleReviewForm.addEventListener("click", () => {
+  const isOpening = reviewForm.hidden;
+  reviewForm.hidden = !isOpening;
+  toggleReviewForm.setAttribute("aria-expanded", String(isOpening));
+  toggleReviewForm.textContent = isOpening ? "Close form" : "Write a review";
+  if (isOpening) {
+    reviewForm.scrollIntoView({ behavior: "smooth", block: "center" });
+    document.getElementById("reviewName").focus({ preventScroll: true });
+  }
+});
+
+showMoreReviews.addEventListener("click", () => {
+  visibleReviewCount += reviewsPerPage;
+  renderReviews(allReviews);
+});
+
+reviewForm.addEventListener("submit", async event => {
+  event.preventDefault();
+  reviewStatus.textContent = "";
+  reviewStatus.classList.remove("error");
+  reviewSubmit.disabled = true;
+  reviewSubmit.textContent = "Publishing…";
+
+  const formData = new FormData(reviewForm);
+  try {
+    await window.glamourReviews.submitReview({
+      name: String(formData.get("reviewName")).trim(),
+      rating: Number(formData.get("reviewRating")),
+      text: String(formData.get("reviewText")).trim()
+    });
+    reviewForm.reset();
+    reviewStatus.textContent = "Thank you! Your review has been published.";
+    await loadReviews();
+    if (!reviewsList.querySelector(".review-load-error")) {
+      reviewsList.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  } catch (error) {
+    reviewStatus.classList.add("error");
+    reviewStatus.textContent =
+      `Your review could not be published: ${explainReviewError(error)}`;
+  } finally {
+    reviewSubmit.disabled = false;
+    reviewSubmit.textContent = "Publish review";
+  }
+});
+
+loadReviews();
+
+const dateInput = document.getElementById("appointmentDate");
+const today = new Date();
+
+dateInput.min = new Date(
+  today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().slice(0, 10);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+let requestMessage = "";
+
+const messageBox = document.getElementById("formMessage");
+const bookingForm = document.getElementById("bookingForm");
+const bookingSubmit = document.getElementById("bookingSubmit");
+const timeSelect = document.getElementById("appointmentTime");
+const availabilityMessage = document.getElementById("availabilityMessage");
+const slotStatuses = new Map();
+const databaseSlotValues = new Map();
+const normalizeSlotLabel = slot =>
+  slot.replace(/\u00e2\u20ac\u201c/g, "–");
+const submitButtonLabel = "Book this appointment ↗";
+bookingSubmit.textContent = submitButtonLabel;
+let availabilityRequestId = 0;
+let bookingInProgress = false;
+
+async function refreshSlotAvailability(clearSelection = true) {
+  const requestId = ++availabilityRequestId;
+  bookingSubmit.disabled = true;
+
+  if (clearSelection) {
+    timeSelect.value = "";
+  }
+
+  if (!dateInput.value) {
+    timeSelect.disabled = true;
+    availabilityMessage.textContent = "Choose a date to check live appointment availability.";
+    return;
+  }
+
+  if (!window.glamourBookings.configured) {
+    timeSelect.disabled = false;
+    Array.from(timeSelect.options).slice(1).forEach(option => {
+      option.disabled = false;
+      option.textContent = option.value;
+      slotStatuses.set(option.value, "request");
+    });
+    availabilityMessage.textContent =
+      "Choose a preferred time. Online availability is not connected, so the parlour must confirm it.";
+    bookingSubmit.disabled = false;
+    return;
+  }
+
+  timeSelect.disabled = true;
+  availabilityMessage.textContent = "Checking available times…";
+
+  try {
+    const statuses = await window.glamourBookings.getSlotStatus(dateInput.value);
+    if (requestId !== availabilityRequestId) return;
+
+    if (!Array.isArray(statuses) || statuses.length !== timeSelect.options.length - 1) {
+      throw new Error("The booking service returned an invalid availability response.");
+    }
+
+    slotStatuses.clear();
+    databaseSlotValues.clear();
+    statuses.forEach(slot => {
+      const timeSlot = normalizeSlotLabel(slot.time_slot);
+      slotStatuses.set(timeSlot, slot.slot_status);
+      databaseSlotValues.set(timeSlot, slot.time_slot);
+    });
+    let selectedSlotTaken = false;
+
+    Array.from(timeSelect.options).slice(1).forEach(option => {
+      const status = slotStatuses.get(option.value);
+      if (!["available", "booked", "blocked", "past"].includes(status)) {
+        throw new Error("The booking service returned an unknown slot status.");
+      }
+
+      option.disabled = status !== "available";
+      option.textContent =
+        status === "booked" ? `${option.value} — Booked` :
+        status === "blocked" ? `${option.value} — Unavailable` :
+        status === "past" ? `${option.value} — Passed` :
+        option.value;
+    });
+
+    if (!clearSelection && timeSelect.value &&
+        slotStatuses.get(timeSelect.value) !== "available") {
+      timeSelect.value = "";
+      selectedSlotTaken = true;
+    }
+
+    timeSelect.disabled = false;
+    availabilityMessage.textContent = selectedSlotTaken
+      ? "Your selected time was just taken. Choose another available time."
+      : "Booked and unavailable times are marked. Each available time can be booked once.";
+    bookingSubmit.disabled = slotStatuses.get(timeSelect.value) !== "available";
+  } catch (error) {
+    if (requestId !== availabilityRequestId) return;
+    timeSelect.disabled = true;
+    slotStatuses.clear();
+    availabilityMessage.textContent =
+      `Could not load appointment availability: ${error.message}`;
+  }
+}
+
+dateInput.addEventListener("change", () => refreshSlotAvailability());
+timeSelect.addEventListener("change", () => {
+  bookingSubmit.disabled = window.glamourBookings.configured
+    ? slotStatuses.get(timeSelect.value) !== "available"
+    : false;
+});
+
+if (!window.glamourBookings.configured) {
+  availabilityMessage.textContent =
+    "Choose a preferred time. Online availability is not connected, so the parlour must confirm it.";
+  timeSelect.disabled = false;
+  Array.from(timeSelect.options).slice(1).forEach(option => {
+    option.disabled = false;
+    slotStatuses.set(option.value, "request");
+  });
+  bookingSubmit.disabled = false;
+}
+
+window.setInterval(() => {
+  if (window.glamourBookings.configured &&
+      document.visibilityState === "visible" &&
+      dateInput.value &&
+      !bookingInProgress) {
+    refreshSlotAvailability(false);
+  }
+}, 20000);
+
+// Filter the packages
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+
+    document.querySelectorAll(".package-card").forEach(card => {
+      card.hidden = filter !== "all" && card.dataset.category !== filter;
+    });
+  });
+});
+
+// Select a package and scroll to the booking form
+function choosePackage(value) {
+  const select = document.getElementById("serviceSelect");
+
+  let option = Array.from(select.options).find(item =>
+    item.text === value || item.value === value
+  );
+
+  if (!option) {
+    option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    select.add(option);
+  }
+
+  select.value = option.value || option.text;
+
+  select.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  select.focus({
+    preventScroll: true
+  });
+}
+
+document.querySelectorAll("[data-book]").forEach(button => {
+  button.addEventListener("click", () => {
+    choosePackage(button.dataset.book);
+  });
+});
+
+document.querySelectorAll("[data-service]").forEach(button => {
+  button.addEventListener("click", () => {
+    choosePackage(button.dataset.service);
+  });
+});
+
+const revealElements = document.querySelectorAll(
+  ".section-head, .trust-item, .service-card, .package-card, .gallery-tile, .review-card, .booking-layout"
+);
+
+if ("IntersectionObserver" in window && revealElements.length) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(element => {
+    element.classList.add("scroll-reveal");
+    revealObserver.observe(element);
+  });
+
+  document.body.classList.add("motion-ready");
+}
+
+// Save a reservation when configured; otherwise prepare an unconfirmed request.
+bookingForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const data = new FormData(event.currentTarget);
+  const enteredPhone = String(data.get("customerPhone")).trim();
+  const normalizedPhone = enteredPhone.replace(/[\s-]/g, "").replace(/^\+91/, "");
+  const appointment = {
+    name: String(data.get("customerName")).trim(),
+    phone: normalizedPhone,
+    service: String(data.get("serviceSelect")),
+    date: String(data.get("appointmentDate")),
+    time: String(data.get("appointmentTime")),
+    notes: [
+      data.get("extra") ? `Notes: ${data.get("extra")}` : "",
+      data.get("notes") ? String(data.get("notes")) : ""
+    ].filter(Boolean).join("\n")
+  };
+
+  requestMessage =
+`Appointment request — Glamour Beauty Parlour
+Name: ${appointment.name}
+Phone: ${appointment.phone}
+Service/package: ${appointment.service}
+Preferred date: ${appointment.date}
+Preferred time: ${appointment.time}
+Notes: ${appointment.notes || "None"}
+
+Please confirm whether this time is available. Thank you!`;
+
+  if (!window.glamourBookings.configured) {
+    window.location.href =
+      `https://wa.me/${salonWhatsApp}?text=${encodeURIComponent(requestMessage)}`;
+    return;
+  }
+
+  if (slotStatuses.get(appointment.time) !== "available") {
+    messageBox.textContent = "That time is no longer available. Choose another available time.";
+    messageBox.classList.add("show");
+    await refreshSlotAvailability();
+    return;
+  }
+
+  bookingSubmit.disabled = true;
+  bookingInProgress = true;
+  bookingSubmit.textContent = "Reserving your time…";
+  dateInput.disabled = true;
+  timeSelect.disabled = true;
+
+  try {
+    const databaseTimeSlot = databaseSlotValues.get(appointment.time);
+    if (!databaseTimeSlot) {
+      throw new Error("Please choose an available appointment time and try again.");
+    }
+    await window.glamourBookings.createAppointment({
+      ...appointment,
+      time: databaseTimeSlot
+    });
+    requestMessage =
+`Appointment request — Glamour Beauty Parlour
+Name: ${appointment.name}
+Phone: ${appointment.phone}
+Service/package: ${appointment.service}
+Preferred date: ${appointment.date}
+Preferred time: ${appointment.time}
+Notes: ${appointment.notes || "None"}
+
+My appointment time is reserved online. Please confirm the details. Thank you!`;
+
+    window.location.href =
+      `https://wa.me/${salonWhatsApp}?text=${encodeURIComponent(requestMessage)}`;
+  } catch (error) {
+    const slotTaken =
+      error.message.includes("SLOT_ALREADY_BOOKED") ||
+      error.message.includes("SLOT_UNAVAILABLE") ||
+      error.message.includes("SLOT_PASSED");
+    messageBox.textContent = slotTaken
+      ? error.message.includes("SLOT_PASSED")
+        ? "That time has already passed. Please choose a future time."
+        : "Sorry, someone just booked that time. Choose another available time."
+      : `We couldn't save your appointment: ${error.message}`;
+    messageBox.classList.add("show");
+    await refreshSlotAvailability();
+  } finally {
+    bookingInProgress = false;
+    dateInput.disabled = false;
+    bookingSubmit.textContent = submitButtonLabel;
+    bookingSubmit.disabled =
+      slotStatuses.get(timeSelect.value) !== "available" || timeSelect.disabled;
+  }
+});
+
+</script>
+
+</body>
+</html>
